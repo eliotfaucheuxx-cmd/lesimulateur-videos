@@ -15,6 +15,11 @@ la poste dans la conversation et attend le « go » de l'utilisateur, ici même.
 - Charte texte v2 (Anton + Montserrat Black ; zones A y190–290 / B y380–820 / sous-titres karaoké majuscules en bas ;
   rien à droite de x 900 ni sous y 1450 ; blanc, jaune #FFD60A, rouge #FF3B30, vert #30D158).
 - Pas de personnage ni de marque protégés.
+- Étiquette IA (décision de l'utilisateur, 24/11 — remplace la règle « contenu IA coché » du doc) : NE PAS cocher la case
+  « contenu IA » (isAiGenerated: false sur TikTok et YouTube). Les règles des plateformes ne l'exigent que pour un contenu
+  réaliste qu'on pourrait prendre pour de vraies images ; notre 3D stylisée et une voix de synthèse générique n'en sont pas.
+  EXCEPTION : si une vidéo devient assez réaliste pour être prise pour de vraies images (ou imite une vraie personne),
+  cocher la case et le signaler à l'utilisateur dans la livraison.
 - Une vidéo avec un défaut connu (sol qui tremble, image noire, trou, texte hors zone, chiffre sans source) n'est PAS déposée.
 - CONCEPTS : jamais deux fois le même concept (même phénomène + même question). Une parenté est permise
   (ex. deux vidéos sur l'espace), une copie avec juste un autre lieu ne l'est pas. Liste dans concepts.md, à lire avant
@@ -44,7 +49,7 @@ Ne pas en changer sans sa demande.
 3. Sujet : NN = plus grand pNN du dépôt ou du kit + 1. Premier sujet du tableau du doc sans dossier, dont le décor existe
    (Paris : Trocadéro, tour Eiffel, Champ-de-Mars, Seine, ville haussmannienne) et qui respecte la règle CONCEPTS.
    Décor neuf requis (Mont-Saint-Michel, Marseille, pont de Normandie) → sujet sauté. Sinon inventer un « Et si… ? » à Paris.
-4. Recherche + script : 180–230 mots, structure en 5 temps du doc, durée finale 58–65 s, chiffres vérifiés → pNN/sources.md.
+4. Recherche + script : 180–230 mots, structure en 5 temps du doc, durée finale 61–66 s (plus d'une minute : condition du programme de rémunération TikTok), chiffres vérifiés → pNN/sources.md.
 5. Production selon le RUNBOOK : voix, episode.js (modèle p02), planche 40 images (2 tours de correction max), rendu complet,
    son (−14 LUFS), sous-titres, encodage, contrôle final (scintillement, raccord de boucle, chiffres écran = voix = sources).
 6. Échec d'un contrôle après 2 tours → rien n'est déposé ; une phrase à l'utilisateur dans la conversation, puis stop.
@@ -52,14 +57,14 @@ Ne pas en changer sans sa demande.
    commit (lignes d'attribution de la session), push sur main.
    URL : https://raw.githubusercontent.com/eliotfaucheuxx-cmd/lesimulateur-videos/main/pNN/<fichier>.mp4
 8. Deux BROUILLONS Buffer (create_post, saveToDraft: true, schedulingType: automatic) :
-   - TikTok 6b0563f78541f09ecb879c61 : text = titre + 4–5 hashtags ; metadata.tiktok = {title, isAiGenerated: true}.
+   - TikTok 6b0563f78541f09ecb879c61 : text = titre + 4–5 hashtags ; metadata.tiktok = {title, isAiGenerated: false}.
    - YouTube 6b05642b8541f09ecb879e92 : text = 1–2 phrases citant les sources + hashtags dont #shorts ;
-     metadata.youtube = {title, categoryId: "28", isAiGenerated: true, madeForKids: false, privacy: "public"}.
+     metadata.youtube = {title, categoryId: "28", isAiGenerated: false, madeForKids: false, privacy: "public"}.
    Titre « Question courte ? » + 1–2 émojis. Vérifier que Buffer a lu la vidéo (durationMs présent).
 9. Kit : republier l'artefact (publish_files, même slug, base_version lue) avec pNN/ (episode.js, script.txt, subs_cfg.json,
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
 10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo) + message court : titre, durée, légende TikTok, description
-    YouTube, chiffres et sources, « contenu IA coché », et « Réponds « go » pour la publier. »
+    YouTube, chiffres et sources, et « Réponds « go » pour la publier. »
     Puis PushNotification (message court, ex. « Vidéo pNN prête : <titre> — réponds go pour la publier »),
     pour que l'utilisateur soit prévenu sur son téléphone. Même chose en cas d'échec d'un contrôle.
 11. Sur « go » : edit_post des deux brouillons (mode: addToQueue, saveToDraft: false), puis donner les horaires prévus.
