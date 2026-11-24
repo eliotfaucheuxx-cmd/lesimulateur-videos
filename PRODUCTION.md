@@ -30,6 +30,10 @@ la poste dans la conversation et attend le « go » de l'utilisateur, ici même.
 3. Ce dépôt (eliotfaucheuxx-cmd/lesimulateur-videos, main), cloné dans /home/claude/lesimulateur-videos.
    S'il manque : add_repo (push), clone --depth 1 avec un long délai, register_repo_root.
 
+## Voix
+Voix off : fr-FR-HenriNeural, débit +15 %, hauteur normale (choix provisoire du 24/11, remplace Rémy). Si l'utilisateur
+choisit une autre voix dans la conversation, utiliser la sienne et mettre cette ligne à jour.
+
 ## Étapes
 1. Installation selon le RUNBOOK (si pas déjà fait dans l'espace de travail). Voix edge-tts à travers le proxy :
    dans tts.py, avant d'importer edge_tts : `import certifi; certifi.where=lambda: '/root/.ccr/ca-bundle.crt'`,
