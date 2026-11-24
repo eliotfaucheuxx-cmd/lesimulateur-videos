@@ -22,7 +22,9 @@ la poste dans la conversation et attend le « go » de l'utilisateur, ici même.
 
 ## Sources de vérité
 1. Artefact « Kit Le Simulateur », slug 68626a03-5140-4b21-b2ff-e1207f43f01e : moteur, RUNBOOK.md (à suivre à la lettre),
-   épisodes modèles (p02 = référence validée). Récupérer avec list_files + read_file(paths=[…]) si absent de l'espace de travail.
+   épisodes modèles (p02 = référence validée). Copie de travail installée dans /home/claude/kit (moteur « rendu v2 » :
+   nuages, dalles, pelouse, façades variées, lumière chaude — garder ces réglages par défaut). Si elle manque, récupérer
+   tous les fichiers avec list_files + read_file(paths=[…]).
 2. Doc « Le Simulateur — plan de production des vidéos » https://claude.ai/artifact/TzguHDrj5Atto8nFPSH6ZY (outils Claude Docs) :
    concept, structure en 5 temps, charte, tableau « Prochains épisodes proposés ». Publication = Buffer + ce dépôt (pas Metricool).
 3. Ce dépôt (eliotfaucheuxx-cmd/lesimulateur-videos, main), cloné dans /home/claude/lesimulateur-videos.
