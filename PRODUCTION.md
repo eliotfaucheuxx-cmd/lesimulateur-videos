@@ -54,6 +54,8 @@ la poste dans la conversation et attend le « go » de l'utilisateur, ici même.
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
 10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo) + message court : titre, durée, légende TikTok, description
     YouTube, chiffres et sources, « contenu IA coché », et « Réponds « go » pour la publier. »
+    Puis PushNotification (message court, ex. « Vidéo pNN prête : <titre> — réponds go pour la publier »),
+    pour que l'utilisateur soit prévenu sur son téléphone. Même chose en cas d'échec d'un contrôle.
 11. Sur « go » : edit_post des deux brouillons (mode: addToQueue, saveToDraft: false), puis donner les horaires prévus.
     Corrections demandées → corriger, redéposer, mettre à jour les brouillons, redemander un « go ».
 
