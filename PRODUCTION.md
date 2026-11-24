@@ -31,8 +31,8 @@ la poste dans la conversation et attend le « go » de l'utilisateur, ici même.
    S'il manque : add_repo (push), clone --depth 1 avec un long délai, register_repo_root.
 
 ## Voix
-Voix off : fr-FR-HenriNeural, débit +15 %, hauteur normale (choix provisoire du 24/11, remplace Rémy). Si l'utilisateur
-choisit une autre voix dans la conversation, utiliser la sienne et mettre cette ligne à jour.
+Voix off : fr-BE-GerardNeural, débit +15 %, hauteur normale — choix de l'utilisateur (24/11) pour TOUTE la suite du projet.
+Ne pas en changer sans sa demande.
 
 ## Étapes
 1. Installation selon le RUNBOOK (si pas déjà fait dans l'espace de travail). Voix edge-tts à travers le proxy :
