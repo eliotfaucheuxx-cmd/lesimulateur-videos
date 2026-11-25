@@ -66,7 +66,7 @@ Ne pas en changer sans sa demande.
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
 10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo, display attach, pour qu'il puisse la télécharger et la poster sur
     TikTok) + message court, qui commence par une ligne de suivi des vidéos
-    déjà publiées (vues TikTok et YouTube via list_posts includeMetrics) ; ensuite : titre, durée, légende TikTok, description
+    déjà publiées (vues YouTube via list_posts includeMetrics ; les vidéos TikTok postées à la main ne sont pas visibles depuis Buffer) ; ensuite : titre, durée, légende TikTok, description
     YouTube, chiffres et sources ; la légende TikTok dans un bloc de code (facile à copier) avec le rappel « publie-la toi-même sur
     TikTok, idéalement entre 18 h et 21 h, case « contenu IA » décochée » ; et « Réponds « go » pour la mettre en file sur YouTube. »
     Puis PushNotification (message court, ex. « Vidéo pNN prête : <titre> — réponds go pour la publier »),
