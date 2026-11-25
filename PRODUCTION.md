@@ -59,7 +59,7 @@ Ne pas en changer sans sa demande.
 8. Deux BROUILLONS Buffer (create_post, saveToDraft: true, schedulingType: automatic) :
    - TikTok 6b0563f78541f09ecb879c61 : text = titre + 4–5 hashtags ; metadata.tiktok = {title, isAiGenerated: false}.
    - YouTube 6b05642b8541f09ecb879e92 : text = 1–2 phrases citant les sources + hashtags dont #shorts ;
-     metadata.youtube = {title, categoryId: "28", isAiGenerated: false, madeForKids: false, privacy: "public"}.
+     metadata.youtube = {type: "short", title, categoryId: "28", isAiGenerated: false, madeForKids: false, privacy: "public"}.
    Titre « Question courte ? » + 1–2 émojis. Vérifier que Buffer a lu la vidéo (durationMs présent).
 9. Kit : republier l'artefact (publish_files, même slug, base_version lue) avec pNN/ (episode.js, script.txt, subs_cfg.json,
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
