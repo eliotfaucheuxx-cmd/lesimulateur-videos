@@ -63,7 +63,8 @@ Ne pas en changer sans sa demande.
    Titre « Question courte ? » + 1–2 émojis. Vérifier que Buffer a lu la vidéo (durationMs présent).
 9. Kit : republier l'artefact (publish_files, même slug, base_version lue) avec pNN/ (episode.js, script.txt, subs_cfg.json,
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
-10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo) + message court : titre, durée, légende TikTok, description
+10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo) + message court, qui commence par une ligne de suivi des vidéos
+    déjà publiées (vues TikTok et YouTube via list_posts includeMetrics) ; ensuite : titre, durée, légende TikTok, description
     YouTube, chiffres et sources, et « Réponds « go » pour la publier. »
     Puis PushNotification (message court, ex. « Vidéo pNN prête : <titre> — réponds go pour la publier »),
     pour que l'utilisateur soit prévenu sur son téléphone. Même chose en cas d'échec d'un contrôle.
