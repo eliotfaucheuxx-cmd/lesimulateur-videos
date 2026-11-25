@@ -44,8 +44,8 @@ Ne pas en changer sans sa demande.
    dans tts.py, avant d'importer edge_tts : `import certifi; certifi.where=lambda: '/root/.ccr/ca-bundle.crt'`,
    puis `import ssl, edge_tts.communicate as ec; ec.ssl_ctx = ssl.create_default_context(cafile='/root/.ccr/ca-bundle.crt')`,
    et `proxy=os.environ.get('HTTPS_PROXY')` dans edge_tts.Communicate. Ne jamais désactiver la vérification TLS.
-2. Ménage : posts Buffer de « My organization » (id 6b05639be08716fac2351d25). Pour chaque vidéo du dépôt dont TOUS les posts
-   (TikTok et YouTube) sont « sent », supprimer le .mp4 (git rm, commit, push) en gardant sources.md.
+2. Ménage : posts Buffer de « My organization » (id 6b05639be08716fac2351d25). Pour chaque vidéo du dépôt dont le post YouTube
+   est « sent » (TikTok ne passe plus par Buffer), supprimer le .mp4 (git rm, commit, push) en gardant sources.md.
 3. Sujet : NN = plus grand pNN du dépôt ou du kit + 1. Premier sujet du tableau du doc sans dossier, dont le décor existe
    (Paris : Trocadéro, tour Eiffel, Champ-de-Mars, Seine, ville haussmannienne) et qui respecte la règle CONCEPTS.
    Décor neuf requis (Mont-Saint-Michel, Marseille, pont de Normandie) → sujet sauté. Sinon inventer un « Et si… ? » à Paris.
@@ -56,19 +56,22 @@ Ne pas en changer sans sa demande.
 7. Dépôt : pNN/pNN_<sujet-court>.mp4 (< 95 Mo) + pNN/sources.md ; ajouter la ligne du concept dans concepts.md ;
    commit (lignes d'attribution de la session), push sur main.
    URL : https://raw.githubusercontent.com/eliotfaucheuxx-cmd/lesimulateur-videos/main/pNN/<fichier>.mp4
-8. Deux BROUILLONS Buffer (create_post, saveToDraft: true, schedulingType: automatic) :
-   - TikTok 6b0563f78541f09ecb879c61 : text = titre + 4–5 hashtags ; metadata.tiktok = {title, isAiGenerated: false}.
+8. TikTok = PUBLICATION MANUELLE PAR L'UTILISATEUR (décision du 25/11 : le compte neuf n'a eu aucune vue via Buffer, et 0 souci
+   en publiant à la main). Ne JAMAIS créer de post TikTok dans Buffer. Préparer seulement la légende TikTok (titre + 4–5 hashtags).
+   UN BROUILLON Buffer YouTube (create_post, saveToDraft: true, schedulingType: automatic) :
    - YouTube 6b05642b8541f09ecb879e92 : text = 1–2 phrases citant les sources + hashtags dont #shorts ;
      metadata.youtube = {type: "short", title, categoryId: "28", isAiGenerated: false, madeForKids: false, privacy: "public"}.
    Titre « Question courte ? » + 1–2 émojis. Vérifier que Buffer a lu la vidéo (durationMs présent).
 9. Kit : republier l'artefact (publish_files, même slug, base_version lue) avec pNN/ (episode.js, script.txt, subs_cfg.json,
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
-10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo) + message court, qui commence par une ligne de suivi des vidéos
+10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo, display attach, pour qu'il puisse la télécharger et la poster sur
+    TikTok) + message court, qui commence par une ligne de suivi des vidéos
     déjà publiées (vues TikTok et YouTube via list_posts includeMetrics) ; ensuite : titre, durée, légende TikTok, description
-    YouTube, chiffres et sources, et « Réponds « go » pour la publier. »
+    YouTube, chiffres et sources ; la légende TikTok dans un bloc de code (facile à copier) avec le rappel « publie-la toi-même sur
+    TikTok, idéalement entre 18 h et 21 h, case « contenu IA » décochée » ; et « Réponds « go » pour la mettre en file sur YouTube. »
     Puis PushNotification (message court, ex. « Vidéo pNN prête : <titre> — réponds go pour la publier »),
     pour que l'utilisateur soit prévenu sur son téléphone. Même chose en cas d'échec d'un contrôle.
-11. Sur « go » : edit_post des deux brouillons (mode: addToQueue, saveToDraft: false), puis donner les horaires prévus.
+11. Sur « go » : edit_post du brouillon YouTube (mode: addToQueue, saveToDraft: false), puis donner l'horaire prévu.
     Corrections demandées → corriger, redéposer, mettre à jour les brouillons, redemander un « go ».
 
 Budget ou temps insuffisant → livrer ce qui est prêt, sans brouillon pour une vidéo incomplète, et dire ce qui manque.
