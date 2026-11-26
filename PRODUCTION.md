@@ -49,26 +49,35 @@ Ne pas en changer sans sa demande.
 3. Sujet : NN = plus grand pNN du dépôt ou du kit + 1. Premier sujet du tableau du doc sans dossier, dont le décor existe
    (Paris : Trocadéro, tour Eiffel, Champ-de-Mars, Seine, ville haussmannienne) et qui respecte la règle CONCEPTS.
    Décor neuf requis (Mont-Saint-Michel, Marseille, pont de Normandie) → sujet sauté. Sinon inventer un « Et si… ? » à Paris.
-4. Recherche + script : 180–230 mots, structure en 5 temps du doc, durée finale 61–66 s (plus d'une minute : condition du programme de rémunération TikTok), chiffres vérifiés → pNN/sources.md.
-5. Production selon le RUNBOOK : voix, episode.js (modèle p02), planche 40 images (2 tours de correction max), rendu complet,
-   son (−14 LUFS), sous-titres, encodage, contrôle final (scintillement, raccord de boucle, chiffres écran = voix = sources).
+   FORMATS EN ROTATION (RUNBOOK §0, v3) : A « Quelle taille / combien… ? » · B « Et si [phénomène] à Paris ? » ·
+   C « À l'échelle » (objet géant ou minuscule comparé à Paris). Jamais deux fois de suite le même format :
+   lire la lettre de la dernière ligne de concepts.md et choisir un sujet d'un autre format.
+4. Recherche + script : 180–230 mots, structure en 5 temps du doc ; 1re phrase = la question avec le LIEU et un CHIFFRE ou
+   un enjeu concret, dite avant 0,5 s ; annoncer tôt le nombre de paliers (promesse ouverte) ; dernière phrase = question
+   binaire qui renvoie au début (boucle) ; durée finale 61–66 s (plus d'une minute : condition du programme de rémunération TikTok), chiffres vérifiés → pNN/sources.md.
+5. Production selon le RUNBOOK : voix, episode.js (modèle p04 : caméra via engine/shots.js, zoom d'ouverture),  planche 40 images (2 tours de correction max), rendu complet,
+   son (−14 LUFS), sous-titres, encodage, contrôle final (scintillement, raccord de boucle, chiffres écran = voix = sources)
+   + `python3 dbg/hook.py pNN` : tout doit être OK (sinon c'est un défaut connu → étape 6).
 6. Échec d'un contrôle après 2 tours → rien n'est déposé ; une phrase à l'utilisateur dans la conversation, puis stop.
-7. Dépôt : pNN/pNN_<sujet-court>.mp4 (< 95 Mo) + pNN/sources.md ; ajouter la ligne du concept dans concepts.md ;
+7. Dépôt : pNN/pNN_<sujet-court>.mp4 (< 95 Mo) + pNN/sources.md ; ajouter la ligne du concept dans concepts.md
+   (avec sa lettre de format [A]/[B]/[C]) ;
    commit (lignes d'attribution de la session), push sur main.
    URL : https://raw.githubusercontent.com/eliotfaucheuxx-cmd/lesimulateur-videos/main/pNN/<fichier>.mp4
 8. TikTok = PUBLICATION MANUELLE PAR L'UTILISATEUR (décision du 25/11 : le compte neuf n'a eu aucune vue via Buffer, et 0 souci
-   en publiant à la main). Ne JAMAIS créer de post TikTok dans Buffer. Préparer seulement la légende TikTok (titre + 4–5 hashtags).
+   en publiant à la main). Ne JAMAIS créer de post TikTok dans Buffer. Préparer seulement la légende TikTok : la question
+   telle qu'on la taperait dans la recherche TikTok (mots du titre ET de la 1re phrase dite), une phrase d'accroche avec le
+   chiffre le plus fort, puis 4–5 hashtags (#paris #science #etsi + 1–2 du sujet). TikTok indexe voix, sous-titres et légende.
    UN BROUILLON Buffer YouTube (create_post, saveToDraft: true, schedulingType: automatic) :
    - YouTube 6b05642b8541f09ecb879e92 : text = 1–2 phrases citant les sources + hashtags dont #shorts ;
      metadata.youtube = {type: "short", title, categoryId: "28", isAiGenerated: false, madeForKids: false, privacy: "public"}.
-   Titre « Question courte ? » + 1–2 émojis. Vérifier que Buffer a lu la vidéo (durationMs présent).
+   Titre « Question courte ? » (≤ 60 caractères, mots-clés au début) + 1 émoji à la fin. Vérifier que Buffer a lu la vidéo (durationMs présent).
 9. Kit : republier l'artefact (publish_files, même slug, base_version lue) avec pNN/ (episode.js, script.txt, subs_cfg.json,
    sources.md, words.json) et les améliorations du moteur ; au plus une leçon dans RUNBOOK.md.
 10. Livraison DANS LA CONVERSATION : SendUserFile (la vidéo, display attach, pour qu'il puisse la télécharger et la poster sur
     TikTok) + message court, qui commence par une ligne de suivi des vidéos
     déjà publiées (vues YouTube via list_posts includeMetrics ; les vidéos TikTok postées à la main ne sont pas visibles depuis Buffer) ; ensuite : titre, durée, légende TikTok, description
     YouTube, chiffres et sources ; la légende TikTok dans un bloc de code (facile à copier) avec le rappel « publie-la toi-même sur
-    TikTok, idéalement entre 18 h et 21 h, case « contenu IA » décochée » ; et « Réponds « go » pour la mettre en file sur YouTube. »
+    TikTok, idéalement entre 18 h et 21 h, case « contenu IA » décochée, couverture = la 1re image (la question) » ; et « Réponds « go » pour la mettre en file sur YouTube. »
     Puis PushNotification (message court, ex. « Vidéo pNN prête : <titre> — réponds go pour la publier »),
     pour que l'utilisateur soit prévenu sur son téléphone. Même chose en cas d'échec d'un contrôle.
 11. Sur « go » : edit_post du brouillon YouTube (mode: addToQueue, saveToDraft: false), puis donner l'horaire prévu.
