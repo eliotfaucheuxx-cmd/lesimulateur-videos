@@ -36,7 +36,26 @@ la poste dans la conversation et attend le « go » de l'utilisateur, ici même.
    S'il manque : add_repo (push), clone --depth 1 avec un long délai, register_repo_root.
 
 ## Voix
-Voix off : fr-BE-GerardNeural, débit +15 %, hauteur normale — choix de l'utilisateur (24/11) pour TOUTE la suite du projet.
+Voix off : fr-BE-GerardNeural, hauteur normale — choix de l'utilisateur (24/11) pour TOUTE la suite du projet.
+Débit +25 % depuis le 27/11 (« plus rapide le ton ») : `python3 tts.py pNN/script.txt pNN fr-BE-GerardNeural +25%`.
+
+## TON v4 (demande de l'utilisateur, 27/11) — prime sur tout le reste du style
+« Un peu moins scientifique, plus rythmé, plus de plans et d'animations, moins de texte hyper technique,
+plus rapide le ton et les scènes, plus de trucs un peu WTF dans la réflexion. »
+- Ton : copain qui raconte un truc dingue, pas prof. Phrases de 4 à 12 mots. Zéro jargon (pas de « atmosphère standard »,
+  « limite de Roche », « hPa », « orthodromique »…) : on dit l'effet, pas le nom du phénomène.
+- Chiffres : toujours vérifiés (sources.md complète comme avant), mais à l'écran et à la voix seulement 3 ou 4 chiffres
+  forts, arrondis, traduits en comparaisons du quotidien (« 27 tours Eiffel », « plus froid qu'un congélateur »,
+  « ton souffle ne sert plus à rien »). Les précisions techniques restent dans sources.md et la description YouTube.
+- WTF : au moins 3 conséquences absurdes mais vraies ou plausibles (pigeons, métro, baguette, chats, touristes, voisins,
+  Wi-Fi…), une par palier, et un retournement final qu'on n'attend pas. Chercher l'angle « attends… quoi ? ».
+- Rythme : un plan toutes les 1,5–2,5 s (≈ 30 plans par vidéo), jamais 4 s sur le même cadrage ; mouvements de caméra
+  francs (travellings, zooms, plans subjectifs, réactions de la foule) ; une animation qui bouge à chaque plan.
+- Texte à l'écran : 1 à 3 mots en gros (le chiffre ou le mot choc), pas de phrases ; plus de panneaux explicatifs ou de
+  schémas chargés ; un mini-schéma seulement s'il se comprend en 1 seconde.
+- Sujets : préférer les idées absurdes et concrètes (« Et si tous les Parisiens sautaient en même temps ? »,
+  « Et si la Seine se vidait d'un coup ? », « Et si un pigeon faisait la taille de la tour Eiffel ? »,
+  « Et si Paris tournait 10 fois plus vite ? », « Combien de baguettes pour remplir la tour Eiffel ? »).
 Ne pas en changer sans sa demande.
 
 ## Étapes
@@ -52,7 +71,7 @@ Ne pas en changer sans sa demande.
    FORMATS EN ROTATION (RUNBOOK §0, v3) : A « Quelle taille / combien… ? » · B « Et si [phénomène] à Paris ? » ·
    C « À l'échelle » (objet géant ou minuscule comparé à Paris). Jamais deux fois de suite le même format :
    lire la lettre de la dernière ligne de concepts.md et choisir un sujet d'un autre format.
-4. Recherche + script : 180–230 mots, structure en 5 temps du doc ; 1re phrase = la question avec le LIEU et un CHIFFRE ou
+4. Recherche + script (TON v4) : 210–240 mots à +25 %, structure en 5 temps du doc ; 1re phrase = la question avec le LIEU et un CHIFFRE ou
    un enjeu concret, dite avant 0,5 s ; annoncer tôt le nombre de paliers (promesse ouverte) ; dernière phrase = question
    binaire qui renvoie au début (boucle) ; durée finale 61–66 s (plus d'une minute : condition du programme de rémunération TikTok), chiffres vérifiés → pNN/sources.md.
 5. Production selon le RUNBOOK : voix, episode.js (modèle p04 : caméra via engine/shots.js, zoom d'ouverture),  planche 40 images (2 tours de correction max), rendu complet,
