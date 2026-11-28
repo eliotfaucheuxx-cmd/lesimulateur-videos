@@ -53,6 +53,16 @@ plus rapide le ton et les scènes, plus de trucs un peu WTF dans la réflexion. 
   francs (travellings, zooms, plans subjectifs, réactions de la foule) ; une animation qui bouge à chaque plan.
 - Texte à l'écran : 1 à 3 mots en gros (le chiffre ou le mot choc), pas de phrases ; plus de panneaux explicatifs ou de
   schémas chargés ; un mini-schéma seulement s'il se comprend en 1 seconde.
+- LISIBILITÉ (retour de l'utilisateur après p06, 28/11 : « le rythme est mieux, mais on comprend pas trop le sens ;
+  plus simple à suivre, qui évolue, avec le même système ; on voit et explique le concept de fin au premier plan ») :
+  · PREMIER PLAN = LA FIN : on montre l'image finale ET la voix dit clairement la conclusion en une phrase
+    (ex. « Ça, c'est Paris sous 30 mètres d'eau. Voilà comment on en arrive là. »). Le spectateur sait où on va.
+  · UN SEUL FIL qui évolue : une seule chose qui grandit (une seule mesure, un seul objet, un seul lieu repère).
+    Pas de changement de sujet en cours de route (p06 mélangeait hauteur, poids et longueur : à éviter).
+  · Un plan REPÈRE qui revient à chaque palier (même cadrage, ex. le Trocadéro face à la tour) pour voir l'évolution.
+  · Un COMPTEUR unique toujours visible (petit, en haut) qui monte de palier en palier.
+  · Chaque palier = une phrase simple : ce qu'on voit + le chiffre + la conséquence WTF. 4 à 5 paliers maximum.
+  · Le rythme reste rapide (≈ 30 plans), mais les plans d'un palier montrent tous la même chose sous plusieurs angles.
 - Sujets : préférer les idées absurdes et concrètes (« Et si tous les Parisiens sautaient en même temps ? »,
   « Et si la Seine se vidait d'un coup ? », « Et si un pigeon faisait la taille de la tour Eiffel ? »,
   « Et si Paris tournait 10 fois plus vite ? », « Combien de baguettes pour remplir la tour Eiffel ? »).
